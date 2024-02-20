@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ImportExport.maui.ImportExportPage"
+             Title="ImportExportPage">
+    <VerticalStackLayout Spacing="10" Margin="20,20,20,20">
+        <Label 
+            Text="Import and Export xml file"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Button x:Name="Import" Text="Import xml file" Clicked="Import_Clicked"></Button>
+        <Button x:Name="Export" Text="Export xml file" Clicked="Export_Clicked"></Button>
+
+        <ScrollView Orientation="Vertical">
+            <ListView x:Name="xmlListView" VerticalScrollBarVisibility="Always">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>
